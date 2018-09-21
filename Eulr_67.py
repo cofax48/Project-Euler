@@ -2,14 +2,36 @@
 
 triangle = open('p067_triangle.txt')
 triangle = str(triangle.read())
-'''
-print(triangle[0:2])
-print(triangle[3:5]) #+3
-print(triangle[9:11]) #+6
-print(triangle[18:20]) #+9
-print(triangle[30:32]) #+12
-print(triangle[45:47]) #+15
 
+def staright_down():
+    count = 1
+    three_addition = 0
+    for row in range(100):
+
+        down = triangle[three_addition:three_addition+2]
+        print(triangle[three_addition+(count *3):three_addition+((count * 3) + 5)])
+        10 = 76
+        12 = 75
+        23 = 80
+        28 = 78
+        32 = 79
+        41 = 79
+        52 = 77
+        54 = 76
+
+        """
+        print(triangle[3:5]) #+3
+        print(triangle[9:11]) #+6
+        print(triangle[18:20]) #+9
+        print(triangle[30:32]) #+12
+        print(triangle[45:47]) #+15
+        """
+        #print(count, three_addition)
+        three_addition += (3 * count)
+        #print(three_addition)
+        count += 1
+staright_down()
+'''
 (i-15)/row_counter
 row 7, 63
 row 8, 81
@@ -62,7 +84,7 @@ def cray_counter(vertical_list, edge_list):
         a = (i + ((row_counter*3)))
         b = (q + ((row_counter*3)))
         # straight down
-        c = (i + (row_counter*3)+3) 
+        c = (i + (row_counter*3)+3)
         d = (q + (row_counter*3)+3)
         #next row, one to the right
         e = (i + ((row_counter*3)+6))
@@ -111,16 +133,16 @@ def cray_counter(vertical_list, edge_list):
                 row_list.append(int(triangle[i:q]))
                 i = i
                 row_counter += 1
-                
+
 
     print(row_list)
 vertical_list = down_counter()['vertical_list']
 edge_list = down_counter()['edge_list']
 cray_counter(vertical_list, edge_list)
 print(3**6)
-"""
+
 print(3**9)
-"""
+
 def five_rows_ahead():
     figure out which route by brute forcing which route over
     the next five rows would produce the gratst sum and then have the computr
